@@ -32,14 +32,37 @@ void Suduko::cout_board()
 bool Suduko::validate_board()
 {
     // check row
+    // for (int i = 0; i < 9; i++)
+    // {
+    //     for (int j = 1; j <= 9; j++)
+    //         if (ecount(board[i], j) >= 2)
+    //         {
+    //             return false;
+    //         };
+    // };
+
+    // check column
     for (int i = 0; i < 9; i++)
     {
-        for (int j = 1; j <= 9; j++)
-            if (ecount(board[i], j) >= 2)
+        // tmp int[9]
+        int _row[9];
+        for (int j = 0; j < 9; j++)
+        {
+            _row[j] = board[j][i];
+        };
+        // check
+        for (int j = 1; j <= 8; j++)
+        {
+            if (ecount(_row, j) >= 2)
             {
                 return false;
             };
-    };
+        };
+    }
+    
+    // check 3x3 square
+    
+    // default
     return true;
 };
 
