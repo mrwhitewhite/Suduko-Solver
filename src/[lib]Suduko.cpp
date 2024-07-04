@@ -29,22 +29,11 @@ void Suduko::cout_board()
     }
 };
 
-bool Suduko::validate_board()
-{
-    for (int i = 0; i < 9; i++)
-    {
-        for (int n = 1; n <= 9; n++)
-        {
-            if (ecount(board[i], n) >= 2)
-            {
-                return false;
-            };
-        }
-    }
-    return true;
+bool Suduko::validate_board() {
 };
 
-void Suduko::ccout_board(){
+void Suduko::ccout_board()
+{
     system("cls");
     cout_board();
 };
