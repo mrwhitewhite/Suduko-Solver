@@ -29,8 +29,8 @@ void Suduko::cout_board()
     }
 };
 
-bool Suduko::validate_board() {
-};
+// bool Suduko::validate_board() {
+// };
 
 void Suduko::ccout_board()
 {
