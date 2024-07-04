@@ -1,0 +1,1 @@
+int ecount(int v[9], int element);
