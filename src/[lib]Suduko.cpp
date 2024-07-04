@@ -43,3 +43,8 @@ bool Suduko::validate_board()
     }
     return true;
 };
+
+void Suduko::ccout_board(){
+    system("cls");
+    cout_board();
+};

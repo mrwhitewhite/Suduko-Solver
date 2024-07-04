@@ -14,7 +14,8 @@ private:
     };
 
 public:
-    void cout_board();
-    bool validate_board();
-    bool solve_board();
+    void cout_board(); // cout board
+    void ccout_board(); // clear terminal then cout board
+    bool validate_board(); // validate board(check no repeated 1-9 for each column and row)
+    bool solve_board(); // solve board
 };
