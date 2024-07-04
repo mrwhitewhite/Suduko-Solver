@@ -33,9 +33,9 @@ bool Suduko::validate_board()
 {
     for (int i = 0; i < 9; i++)
     {
-        for (int j = 1; j <= 9; j++)
+        for (int n = 1; n <= 9; n++)
         {
-            if (ecount(board[i], j) >= 2)
+            if (ecount(board[i], n) >= 2)
             {
                 return false;
             };
