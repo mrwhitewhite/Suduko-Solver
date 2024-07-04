@@ -32,14 +32,14 @@ void Suduko::cout_board()
 bool Suduko::validate_board()
 {
     // check row
-    // for (int i = 0; i < 9; i++)
-    // {
-    //     for (int j = 1; j <= 9; j++)
-    //         if (ecount(board[i], j) >= 2)
-    //         {
-    //             return false;
-    //         };
-    // };
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+            if (ecount(board[i], j) >= 2)
+            {
+                return false;
+            };
+    };
 
     // check column
     for (int i = 0; i < 9; i++)
@@ -59,9 +59,34 @@ bool Suduko::validate_board()
             };
         };
     }
-    
+
     // check 3x3 square
-    
+    for (int offset_i = 0; offset_i < 3; offset_i++)
+    {
+        for (int offset_j = 0; offset_j < 3; offset_j++)
+        {
+            int _square[9];
+            int _sq_index = 0;
+            for (int m = 3 * offset_i; m < 3 + 3 * offset_i; m++)
+            {
+                for (int n = 3 * offset_j; n < 3 + 3 * offset_j; n++)
+                {
+                    _square[_sq_index] = board[m][n];
+                    _sq_index++;
+                }
+            }
+
+            // check
+            for (int jj = 1; jj <= 9; jj++)
+            {
+                if (ecount(_square, jj) >= 2)
+                {
+                    return false;
+                }
+            }
+        }
+    }
+
     // default
     return true;
 };
