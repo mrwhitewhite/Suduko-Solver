@@ -29,8 +29,19 @@ void Suduko::cout_board()
     }
 };
 
-// bool Suduko::validate_board() {
-// };
+bool Suduko::validate_board()
+{
+    // check row
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 1; j <= 9; j++)
+            if (ecount(board[i], j) >= 2)
+            {
+                return false;
+            };
+    };
+    return true;
+};
 
 void Suduko::ccout_board()
 {
