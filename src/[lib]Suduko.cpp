@@ -96,3 +96,37 @@ void Suduko::ccout_board()
     system("cls");
     cout_board();
 };
+
+bool Suduko::solve_board()
+{
+    // loop through each coordinate
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+            if (board[i][j] == 0)
+            {
+                // loop through 1-9
+                for (int x = 1; x <= 9; x++)
+                {
+                    // fill in a first possible number(from 1-9) to first empty cell
+                    board[i][j] = x;
+                    if (!validate_board())
+                    {
+                        board[i][j] = 0;
+                        continue;
+                    };
+
+                    // recursive function
+                    if (!solve_board())
+                    {
+                        board[i][j] = 0;
+                        continue;
+                    }
+                };
+                // if cannot fill in 1-9 number in a cell
+                return false;
+            };
+        };
+    };
+};
