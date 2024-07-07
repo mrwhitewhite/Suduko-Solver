@@ -9,5 +9,6 @@
 int main()
 {
     Suduko s;
+    // s.ccout_board();
     s.solve_board();
 };
