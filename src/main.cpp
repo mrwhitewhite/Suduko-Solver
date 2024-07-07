@@ -9,5 +9,5 @@
 int main()
 {
     Suduko s;
-    std::cout << s.validate_board();
+    s.solve_board();
 };

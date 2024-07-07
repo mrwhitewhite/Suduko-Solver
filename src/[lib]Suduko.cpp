@@ -111,9 +111,11 @@ bool Suduko::solve_board()
                 {
                     // fill in a first possible number(from 1-9) to first empty cell
                     board[i][j] = x;
+                    ccout_board(); // cls and cout board
                     if (!validate_board())
                     {
                         board[i][j] = 0;
+                        ccout_board(); // cls and cout board
                         continue;
                     };
 
@@ -121,6 +123,7 @@ bool Suduko::solve_board()
                     if (!solve_board())
                     {
                         board[i][j] = 0;
+                        ccout_board(); // cls and cout board
                         continue;
                     }
                 };
@@ -129,4 +132,5 @@ bool Suduko::solve_board()
             };
         };
     };
+    return true;
 };
