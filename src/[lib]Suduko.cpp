@@ -104,6 +104,7 @@ bool Suduko::solve_board()
     {
         for (int j = 0; j < 9; j++)
         {
+            // operation on empty cell
             if (board[i][j] == 0)
             {
                 // loop through 1-9
@@ -120,11 +121,14 @@ bool Suduko::solve_board()
                     };
 
                     // recursive function
-                    if (!solve_board())
+                    if (solve_board() == false)
                     {
                         board[i][j] = 0;
                         ccout_board(); // cls and cout board
                         continue;
+                    }else
+                    {
+                        return true;
                     }
                 };
                 // if cannot fill in 1-9 number in a cell
